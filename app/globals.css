@@ -1,26 +1,184 @@
+/* Fonts - must come first */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;700;800&display=swap');
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-family-sans: 'Outfit', 'Inter', system-ui, sans-serif;
+  --font-family-mono: 'JetBrains Mono', monospace;
+
+  --ease-premium: cubic-bezier(0.6, 0.05, 0.01, 0.9);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base */
+html {
+  scroll-behavior: smooth;
+  background: #ffffff;
+  overflow-x: hidden;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #ffffff;
+  color: #18181b;
+  font-family: var(--font-family-sans);
+  overflow-x: hidden;
+}
+
+/* Background Curve Utility */
+.bg-curve-hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  position: relative;
+  z-index: 0;
+}
+
+/* The Magic Wave Shape */
+.bg-wave-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 10;
+  clip-path: ellipse(80% 60% at 20% 20%);
+}
+
+/* Zig Zag Divider Utility */
+.clip-zigzag {
+  clip-path: polygon(0 0,
+      100% 0,
+      100% calc(100% - 50px),
+      50% 100%,
+      0 calc(100% - 50px));
+}
+
+@media (max-width: 768px) {
+  .clip-zigzag {
+    clip-path: polygon(0 0,
+        100% 0,
+        100% calc(100% - 30px),
+        50% 100%,
+        0 calc(100% - 30px));
+  }
+}
+
+/* DOT PATTERN UTILITY */
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* GEOMETRIC RIBBON HELPERS */
+.clip-ribbon {
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+}
+
+@media (max-width: 768px) {
+  .bg-dot-pattern {
+    background-size: 16px 16px;
+  }
+}
+
+
+/* For Mobile, simpler curve */
+@media (max-width: 768px) {
+  .bg-wave-mask {
+    clip-path: ellipse(120% 50% at 50% 15%);
+  }
+}
+
+/* 3D Isometric CSS Objects */
+.iso-container {
+  transform: rotateX(60deg) rotateZ(-30deg) rotateY(0deg);
+  transform-style: preserve-3d;
+  transition: transform 0.5s var(--ease-premium);
+}
+
+.iso-card {
+  transform-style: preserve-3d;
+  background: rgba(23, 23, 23, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: -20px 20px 40px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+.float-anim {
+  animation: floating 4s ease-in-out infinite;
+}
+
+.float-anim-delay {
+  animation: floating 4s ease-in-out 2s infinite;
+}
+
+@keyframes floating {
+
+  0%,
+  100% {
+    transform: translateY(0) translateZ(0);
+  }
+
+  50% {
+    transform: translateY(-20px) translateZ(40px);
+  }
+}
+
+/* General Animations */
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-animate {
+  opacity: 0;
+  animation: heroFadeUp 1s var(--ease-premium) forwards;
+}
+
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+/* Scroll Reveal */
+.reveal-on-scroll,
+.reveal-on-scroll-left,
+.reveal-on-scroll-right {
+  opacity: 0 !important;
+  transition: all 1s var(--ease-premium);
+}
+
+.reveal-on-scroll {
+  transform: translateY(50px);
+}
+
+.reveal-on-scroll-left {
+  transform: translateX(-50px);
+}
+
+.reveal-on-scroll-right {
+  transform: translateX(50px);
+}
+
+.is-visible {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
 }
