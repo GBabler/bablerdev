@@ -24,12 +24,12 @@ export default function About() {
                 {/* 2. Fundador (Movido para cima para gerar conexão) */}
                 <div className="reveal-on-scroll delay-200">
                     <div className="flex flex-col md:flex-row gap-8 items-center bg-white/5 p-8 rounded-2xl border border-white/10">
-                        <div className="w-40 h-40 rounded-2xl overflow-hidden border-2 border-white/10 shrink-0 shadow-2xl">
+                        <div className="w-48 h-48 rounded-2xl overflow-hidden border-2 border-white/10 shrink-0 shadow-2xl">
                             <Image
                                 src="/perfil/perfil.jpeg"
                                 alt="Gabriel Babler"
-                                width={160}
-                                height={160}
+                                width={192}
+                                height={192}
                                 className="w-full h-full object-cover scale-x-[-1]"
                             />
                         </div>

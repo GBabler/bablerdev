@@ -26,8 +26,7 @@ export default function Home() {
         style={{ clipPath: "polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
       />
 
-      {/* Accent Line - Small Pop */}
-      <div className="absolute top-40 right-[25%] w-32 h-2 bg-yellow-400 transform rotate-45 z-0" />
+
 
 
       {/* NAVBAR PLACEHOLDER */}
