@@ -122,8 +122,8 @@ export function Navbar() {
                     >
                         <div>
                             <p className="text-zinc-500 text-sm font-mono mb-2">Contato</p>
-                            <a href="mailto:contato@bablerdev.com" className="text-white hover:text-blue-500 transition-colors block">
-                                contato@bablerdev.com
+                            <a href="mailto:gabriel.babler1@hotmail.com" className="text-white hover:text-blue-500 transition-colors block">
+                                gabriel.babler1@hotmail.com
                             </a>
                         </div>
                         <div>
