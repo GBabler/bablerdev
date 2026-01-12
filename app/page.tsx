@@ -5,7 +5,7 @@ import { ArrowRight, ExternalLink, Code2, Database, Terminal, Cpu, Layers } from
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#050505] relative overflow-hidden font-sans selection:bg-pink-500 selection:text-white">
+    <div className="min-h-screen bg-[#050505] relative overflow-hidden selection:bg-pink-500 selection:text-white">
 
       {/* --- BACKGROUND LAYERS --- */}
 

@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Ubuntu_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ScrollObserver } from "@/components/effects/ScrollObserver";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-const inter = Inter({
-  variable: "--font-inter",
+const ubuntuSans = Ubuntu_Sans({
+  variable: "--font-ubuntu-sans",
   subsets: ["latin"],
+  // Variable font does not require weight array
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -28,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased bg-[#050505]`}>
+      <body className={`${ubuntuSans.variable} ${jetbrainsMono.variable} font-sans antialiased bg-[#050505]`}>
         <ScrollObserver />
 
         <Navbar />
