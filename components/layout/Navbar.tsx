@@ -45,11 +45,16 @@ export function Navbar() {
                     }`}>
                     <div className="flex justify-between items-center">
                         {/* Logo */}
-                        <Link href="/" className="relative z-50 group">
-                            <span className={`font-bold text-xl tracking-tighter transition-colors duration-300 ${isOpen ? "text-white" : "text-zinc-900"}`}>
-                                BABLER
-                                <span className="text-blue-600">.</span>
-                            </span>
+                        <Link
+                            href="/"
+                            className="relative z-50 group"
+                            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                        >
+                            <img
+                                src="/img/logo/logo-babler.png"
+                                alt="Babler Logo"
+                                className={`h-10 w-auto object-contain transition-all duration-300 brightness-0 ${isOpen ? "invert" : ""}`}
+                            />
                         </Link>
 
                         {/* Desktop Menu */}

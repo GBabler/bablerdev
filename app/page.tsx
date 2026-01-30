@@ -1,9 +1,29 @@
 "use client";
 
+import { useState, useRef } from "react";
 import Link from "next/link";
-import { ArrowRight, ExternalLink, Code2, Database, Terminal, Cpu, Layers } from "lucide-react";
+import { ArrowRight, ExternalLink, Code2, Database, Terminal, Cpu, Layers, Braces, Hash } from "lucide-react";
 
 export default function Home() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      const x = (e.clientX - rect.left - rect.width / 2) / 25;
+      const y = (e.clientY - rect.top - rect.height / 2) / 25;
+      setMousePosition({ x, y });
+    }
+  };
+
+  const handleMouseEnter = () => setIsHovering(true);
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+    setMousePosition({ x: 0, y: 0 });
+  };
+
   return (
     <div className="min-h-screen bg-[#050505] relative overflow-hidden selection:bg-pink-500 selection:text-white">
 
@@ -71,9 +91,15 @@ export default function Home() {
           </div>
 
           {/* RIGHT: 3D ISOMETRIC COMPOSITION */}
-          <div className="relative h-[500px] w-full flex items-center justify-center perspective-[2000px] hero-animate delay-300">
-            {/* The 3D Container - Slightly adjusted scale for better fit */}
-            <div className="relative w-[300px] h-[400px] md:w-[400px] md:h-[500px] transform rotate-x-12 rotate-y--12 rotate-z-6 preserve-3d">
+          <div
+            ref={containerRef}
+            onMouseMove={handleMouseMove}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className="relative h-[500px] w-full flex items-center justify-center perspective-[2000px] hero-animate delay-300"
+          >
+            {/* The 3D Container */}
+            <div className="relative w-[300px] h-[400px] md:w-[400px] md:h-[500px]">
 
               {/* Laptop Base/Screen Simulation */}
               <div className="absolute inset-0 bg-[#0f0f0f] rounded-2xl border border-white/10 shadow-2xl flex flex-col overflow-hidden backdrop-blur-xl transform transition-transform hover:scale-[1.02] duration-500 group">
@@ -89,41 +115,144 @@ export default function Home() {
                 </div>
 
                 {/* Code Content */}
-                <div className="relative z-10 p-6 space-y-3 font-mono text-sm bg-black/90 h-full">
-                  <div className="w-full h-full space-y-2 opacity-90">
+                <div className="relative z-10 p-5 space-y-2 font-mono text-xs md:text-sm bg-black/90 h-full overflow-hidden">
+                  <div className="text-slate-500 text-[10px]">{"// babler.dev"}</div>
+
+                  <div className="h-1"></div>
+
+                  <div className="flex gap-2">
+                    <span className="text-pink-500">function</span>
+                    <span className="text-yellow-400">olaMundo</span>
+                    <span className="text-white">() {"{"}</span>
+                  </div>
+
+                  <div className="pl-4 border-l border-cyan-500/30 ml-2">
                     <div className="flex gap-2">
-                      <span className="text-pink-500">const</span>
-                      <span className="text-cyan-400">Future</span>
-                      <span className="text-white">=</span>
-                      <span className="text-yellow-400">async</span>
-                      <span className="text-white">()</span>
-                    </div>
-                    <div className="pl-4 space-y-2 border-l border-white/10 ml-1">
-                      <div className="flex gap-2 text-slate-500 text-xs">
-                        // Neon Architecture
-                      </div>
-                      <div className="flex gap-2 text-white">
-                        <span className="text-purple-400">await</span> Launch();
-                      </div>
-                    </div>
-                    <div className="pt-8 grid grid-cols-4 gap-2 h-24 items-end">
-                      {[40, 80, 60, 100].map((h, i) => (
-                        <div key={i} className="w-full bg-gradient-to-t from-cyan-900 to-cyan-500 opacity-50" style={{ height: `${h}%` }}></div>
-                      ))}
+                      <span className="text-cyan-400">console</span>
+                      <span className="text-white">.</span>
+                      <span className="text-yellow-400">log</span>
+                      <span className="text-white">(</span>
+                      <span className="text-green-400">{'"Olá, Mundo!"'}</span>
+                      <span className="text-white">)</span>
                     </div>
                   </div>
+
+                  <div className="text-white">{"}"}</div>
+
+                  <div className="h-2"></div>
+
+                  <div className="flex gap-2">
+                    <span className="text-pink-500">for</span>
+                    <span className="text-white">(</span>
+                    <span className="text-pink-500">let</span>
+                    <span className="text-cyan-400"> i</span>
+                    <span className="text-white"> = </span>
+                    <span className="text-orange-400">0</span>
+                    <span className="text-white">;</span>
+                    <span className="text-cyan-400"> i</span>
+                    <span className="text-white"> {"<"} </span>
+                    <span className="text-orange-400">3</span>
+                    <span className="text-white">;</span>
+                    <span className="text-cyan-400"> i</span>
+                    <span className="text-white">++) {"{"}</span>
+                  </div>
+
+                  <div className="pl-4 border-l border-pink-500/30 ml-2">
+                    <div className="flex gap-2">
+                      <span className="text-yellow-400">olaMundo</span>
+                      <span className="text-white">()</span>
+                    </div>
+                  </div>
+
+                  <div className="text-white">{"}"}</div>
+
+                  <div className="h-3"></div>
+
+                  <div className="text-slate-400 text-[10px]">{">"} Olá, Mundo!</div>
+                  <div className="text-slate-400 text-[10px]">{">"} Olá, Mundo!</div>
+                  <div className="text-slate-400 text-[10px]">{">"} Olá, Mundo!</div>
                 </div>
               </div>
 
-              {/* Floating Technology Cards - Repositioned slightly */}
-              {/* Pink Card */}
-              <div className="absolute -left-12 top-20 bg-black p-4 border border-pink-500/50 shadow-[0_0_30px_-5px_rgba(236,72,153,0.3)] float-anim">
-                <Code2 className="text-pink-500 w-8 h-8" />
+              {/* Floating Icons that follow mouse */}
+              {/* Pink - Code */}
+              <div
+                className={`absolute -left-12 top-20 transition-transform duration-300 ease-out ${!isHovering ? 'float-anim' : ''}`}
+                style={isHovering ? { transform: `translate(${mousePosition.x * 2}px, ${mousePosition.y * 2}px)` } : {}}
+              >
+                <div className="bg-black p-3 border border-pink-500/50 shadow-[0_0_30px_-5px_rgba(236,72,153,0.3)] rounded-lg">
+                  <Code2 className="text-pink-500 w-6 h-6" />
+                </div>
               </div>
 
-              {/* Cyan Card */}
-              <div className="absolute -right-8 bottom-32 bg-black p-4 border border-cyan-500/50 shadow-[0_0_30px_-5px_rgba(6,182,212,0.3)] float-anim-delay">
-                <Cpu className="text-cyan-500 w-8 h-8" />
+              {/* Cyan - CPU */}
+              <div
+                className={`absolute -right-8 bottom-32 transition-transform duration-300 ease-out ${!isHovering ? 'float-anim-delay' : ''}`}
+                style={isHovering ? { transform: `translate(${mousePosition.x * 3}px, ${mousePosition.y * 3}px)` } : {}}
+              >
+                <div className="bg-black p-3 border border-cyan-500/50 shadow-[0_0_30px_-5px_rgba(6,182,212,0.3)] rounded-lg">
+                  <Cpu className="text-cyan-500 w-6 h-6" />
+                </div>
+              </div>
+
+              {/* Purple - Database */}
+              <div
+                className={`absolute -right-10 top-16 transition-transform duration-300 ease-out ${!isHovering ? 'float-anim' : ''}`}
+                style={isHovering ? { transform: `translate(${mousePosition.x * 1.5}px, ${mousePosition.y * 1.5}px)` } : {}}
+              >
+                <div className="bg-black p-3 border border-purple-500/50 shadow-[0_0_30px_-5px_rgba(168,85,247,0.3)] rounded-lg">
+                  <Database className="text-purple-500 w-6 h-6" />
+                </div>
+              </div>
+
+              {/* Green - Terminal */}
+              <div
+                className={`absolute -left-8 bottom-24 transition-transform duration-300 ease-out ${!isHovering ? 'float-anim-delay' : ''}`}
+                style={isHovering ? { transform: `translate(${mousePosition.x * 2.5}px, ${mousePosition.y * 2.5}px)` } : {}}
+              >
+                <div className="bg-black p-3 border border-green-500/50 shadow-[0_0_30px_-5px_rgba(34,197,94,0.3)] rounded-lg">
+                  <Terminal className="text-green-500 w-6 h-6" />
+                </div>
+              </div>
+
+              {/* Yellow - Braces */}
+              <div
+                className={`absolute left-1/2 -top-8 -translate-x-1/2 transition-transform duration-300 ease-out ${!isHovering ? 'float-anim' : ''}`}
+                style={isHovering ? { transform: `translate(${mousePosition.x * 1.8}px, ${mousePosition.y * 1.8}px)` } : {}}
+              >
+                <div className="bg-black p-2 border border-yellow-500/50 shadow-[0_0_30px_-5px_rgba(234,179,8,0.3)] rounded-lg">
+                  <Braces className="text-yellow-500 w-5 h-5" />
+                </div>
+              </div>
+
+              {/* Orange - Hash */}
+              <div
+                className={`absolute left-1/2 -bottom-6 -translate-x-1/2 transition-transform duration-300 ease-out ${!isHovering ? 'float-anim-delay' : ''}`}
+                style={isHovering ? { transform: `translate(${mousePosition.x * 2.2}px, ${mousePosition.y * 2.2}px)` } : {}}
+              >
+                <div className="bg-black p-2 border border-orange-500/50 shadow-[0_0_30px_-5px_rgba(249,115,22,0.3)] rounded-lg">
+                  <Hash className="text-orange-500 w-5 h-5" />
+                </div>
+              </div>
+
+              {/* Blue - Layers */}
+              <div
+                className={`absolute -left-16 top-1/2 -translate-y-1/2 transition-transform duration-300 ease-out ${!isHovering ? 'float-anim' : ''}`}
+                style={isHovering ? { transform: `translate(${mousePosition.x * 3.5}px, ${mousePosition.y * 3.5}px)` } : {}}
+              >
+                <div className="bg-black p-2 border border-blue-500/50 shadow-[0_0_30px_-5px_rgba(59,130,246,0.3)] rounded-lg">
+                  <Layers className="text-blue-500 w-5 h-5" />
+                </div>
+              </div>
+
+              {/* Red - Code */}
+              <div
+                className={`absolute -right-14 top-1/2 -translate-y-1/2 transition-transform duration-300 ease-out ${!isHovering ? 'float-anim-delay' : ''}`}
+                style={isHovering ? { transform: `translate(${mousePosition.x * 4}px, ${mousePosition.y * 4}px)` } : {}}
+              >
+                <div className="bg-black p-2 border border-red-500/50 shadow-[0_0_30px_-5px_rgba(239,68,68,0.3)] rounded-lg">
+                  <Code2 className="text-red-500 w-5 h-5" />
+                </div>
               </div>
             </div>
           </div>
@@ -131,6 +260,8 @@ export default function Home() {
       </section>
 
       {/* STATS SECTION (Bridging the gap) */}
+
+
 
 
       {/* PORTFOLIO & SERVICES (Dark Mode for contrast) */}

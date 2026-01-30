@@ -179,3 +179,116 @@ body {
   opacity: 1 !important;
   transform: translate(0, 0) !important;
 }
+
+/* Logo Shimmer Effect */
+.logo-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent);
+  transform: skewX(-25deg);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 150%;
+  }
+}
+
+/* Blue Logo Filter */
+.filter-blue {
+  filter: brightness(0) saturate(100%) invert(37%) sepia(98%) saturate(1847%) hue-rotate(204deg) brightness(101%) contrast(96%);
+}
+
+/* Blue Glow Pulse Effect */
+.logo-shimmer-blue {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.logo-shimmer-blue img {
+  animation: brightness-pulse 3s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 40px rgba(59, 130, 246, 0.4));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 80px rgba(59, 130, 246, 0.8)) drop-shadow(0 0 120px rgba(255, 255, 255, 0.3));
+  }
+}
+
+@keyframes brightness-pulse {
+
+  0%,
+  100% {
+    filter: brightness(0) saturate(100%) invert(37%) sepia(98%) saturate(1847%) hue-rotate(204deg) brightness(101%) contrast(96%);
+  }
+
+  50% {
+    filter: brightness(0) saturate(100%) invert(37%) sepia(98%) saturate(1847%) hue-rotate(204deg) brightness(130%) contrast(96%);
+  }
+}
+
+/* Orbit Animation */
+.orbit-container {
+  position: absolute;
+  inset: -60px;
+  animation: orbit 20s linear infinite;
+}
+
+.orbit-container-reverse {
+  position: absolute;
+  inset: -60px;
+  animation: orbit 25s linear infinite reverse;
+}
+
+.orbit-item {
+  position: absolute;
+  animation: counter-rotate 20s linear infinite;
+}
+
+.orbit-item-reverse {
+  position: absolute;
+  animation: counter-rotate 25s linear infinite reverse;
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes counter-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
