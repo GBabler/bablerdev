@@ -278,11 +278,11 @@ export default function Home() {
             <a href="https://www.trivu.com.br" target="_blank" rel="noopener noreferrer" className="group block bg-[#0f0f0f] border border-white/5 overflow-hidden rounded-2xl transition-all hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/10">
 
               {/* Image Section - Full Width Fill */}
-              <div className="relative w-full h-64 overflow-hidden">
+              <div className="relative w-full h-72 overflow-hidden bg-black">
                 <img
-                  src="/trivu/landing.png"
+                  src="/img/trivu/trivu.png"
                   alt="Trivu Landing Page"
-                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-auto object-top transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
 
@@ -315,14 +315,52 @@ export default function Home() {
               </div>
             </a>
 
-            {/* Card 2 - Placeholder */}
-            <div className="group bg-[#0f0f0f] border border-white/5 overflow-hidden rounded-2xl flex items-center justify-center min-h-[400px]">
-              <div className="text-center p-8">
-                <Layers className="mx-auto w-16 h-16 text-cyan-500/50 mb-6" />
-                <span className="text-xl font-bold text-white/80">Em breve</span>
-                <p className="text-slate-500 text-sm mt-2">Mais projetos chegando</p>
+            {/* Card 2 - Leitor de Barras */}
+            <a href="https://leitorbarras.bablerdev.com.br/" target="_blank" rel="noopener noreferrer" className="group block bg-[#0f0f0f] border border-white/5 overflow-hidden rounded-2xl transition-all hover:border-cyan-500/50 hover:shadow-2xl hover:shadow-cyan-500/10">
+
+              {/* Image Section - Hover Reveal Effect */}
+              <div className="relative w-full h-72 overflow-hidden bg-black">
+                {/* Static Cover (Visible by Default) */}
+                <img
+                  src="/img/img-leitorbarras/leitorbarra.png"
+                  alt="Leitor de Barras - Capa"
+                  className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-500 group-hover:opacity-0"
+                />
+
+                {/* GIF Demo (Visible on Hover) */}
+                <img
+                  src="/img/img-leitorbarras/leitorbarrasgif.gif"
+                  alt="Leitor de Barras - Demonstração"
+                  className="absolute inset-0 w-full h-full object-cover object-top opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  style={{ transform: 'translateY(-15px)' }}
+                />
               </div>
-            </div>
+
+              {/* Content Section */}
+              <div className="p-6 space-y-3">
+                <div className="flex items-center gap-3">
+                  <h3 className="text-xl font-bold text-white">Leitor de Barras</h3>
+                  <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">WEB APP</span>
+                </div>
+
+                <p className="text-slate-200 font-medium leading-snug">"Digitalize, valide e documente com precisão."</p>
+
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Leitura inteligente via câmera ou upload, com verificação automática de integridade. Gere relatórios PDF detalhados com evidências visuais e dados técnicos prontos para auditoria.
+                </p>
+
+                <p className="text-xs text-cyan-400 font-medium">
+                  Projeto interno <span className="text-slate-500">@BablerDev</span>
+                </p>
+
+                <div className="flex gap-2 flex-wrap pt-3 border-t border-white/10">
+                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">React</span>
+                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">Vite</span>
+                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">PDFGen</span>
+                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">Camera API</span>
+                </div>
+              </div>
+            </a>
           </div>
         </section>
       </div>
