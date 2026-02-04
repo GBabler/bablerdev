@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Ubuntu_Sans, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { ScrollObserver } from "@/components/effects/ScrollObserver";
 import { Navbar } from "@/components/layout/Navbar";
@@ -30,6 +31,11 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${ubuntuSans.variable} ${jetbrainsMono.variable} font-sans antialiased bg-[#050505]`}>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5971787155500943"
+          crossOrigin="anonymous"
+        />
         <ScrollObserver />
 
         <Navbar />
