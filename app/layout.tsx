@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   title: "BABLER. | Software Sob Medida",
   description: "Desenvolvimento de software, sistemas web e automação de processos.",
   keywords: ["software house", "desenvolvimento web", "automação", "Next.js", "C#"],
+  verification: {
+    google: "seu-codigo-de-verificacao-adsense-aqui", // Substitua pelo código real fornecido pelo AdSense
+  },
 };
 
 export default function RootLayout({
