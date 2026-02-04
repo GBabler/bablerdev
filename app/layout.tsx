@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   verification: {
     google: "seu-codigo-de-verificacao-adsense-aqui", // Substitua pelo código real fornecido pelo AdSense
   },
+  other: {
+    "google-adsense-account": "ca-pub-5971787155500943",
+  },
 };
 
 export default function RootLayout({
