@@ -1,6 +1,7 @@
 'use client';
 
 import Script from 'next/script';
+import { getAdsenseConfig, isAdsenseEnabled } from '@/config/adsense.config';
 
 interface GoogleAdsenseProps {
   slot?: string;
@@ -15,7 +16,14 @@ export function GoogleAdsense({
   responsive = true,
   className = '',
 }: GoogleAdsenseProps) {
-  const client = process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT || 'ca-pub-5971787155500943';
+  const config = getAdsenseConfig();
+  
+  // Se AdSense não está ativado neste domínio, não renderiza nada
+  if (!isAdsenseEnabled() || !config.client) {
+    return null;
+  }
+
+  const client = config.client;
 
   return (
     <>
@@ -49,10 +57,16 @@ export function GoogleAdsense({
 
 // Component para anúncios entre posts/conteúdo
 export function AdBetweenContent({ className = 'my-8' }: { className?: string }) {
+  const config = getAdsenseConfig();
+  
+  if (!isAdsenseEnabled() || !config.slots.betweenContent) {
+    return null;
+  }
+
   return (
     <div className={className}>
       <GoogleAdsense
-        slot="2547896541"
+        slot={config.slots.betweenContent}
         format="rectangle"
         className="mx-auto"
       />
@@ -62,10 +76,16 @@ export function AdBetweenContent({ className = 'my-8' }: { className?: string })
 
 // Component para anúncio na sidebar
 export function AdSidebar({ className = '' }: { className?: string }) {
+  const config = getAdsenseConfig();
+  
+  if (!isAdsenseEnabled() || !config.slots.sidebar) {
+    return null;
+  }
+
   return (
     <div className={className}>
       <GoogleAdsense
-        slot="3698745123"
+        slot={config.slots.sidebar}
         format="vertical"
       />
     </div>
@@ -74,10 +94,16 @@ export function AdSidebar({ className = '' }: { className?: string }) {
 
 // Component para anúncio full-width
 export function AdFullWidth({ className = 'my-8' }: { className?: string }) {
+  const config = getAdsenseConfig();
+  
+  if (!isAdsenseEnabled() || !config.slots.fullWidth) {
+    return null;
+  }
+
   return (
     <div className={className}>
       <GoogleAdsense
-        slot="4521369874"
+        slot={config.slots.fullWidth}
         format="horizontal"
         responsive
       />

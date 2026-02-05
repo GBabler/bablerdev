@@ -30,7 +30,6 @@ export const metadata: Metadata = {
     siteName: "BABLER.",
   },
   other: {
-    "google-adsense-account": "ca-pub-5971787155500943",
     "mobile-web-app-capable": "yes",
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "black-translucent",
