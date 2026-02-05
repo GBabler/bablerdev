@@ -1,0 +1,13 @@
+# Robots.txt para bablerdev.com.br
+User-agent: *
+Allow: /
+Disallow: /.next/
+Disallow: /private/
+Disallow: /_next/
+
+# Específico para Google
+User-agent: Googlebot
+Allow: /
+
+# Sitemap
+Sitemap: https://bablerdev.com.br/sitemap.xml

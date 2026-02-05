@@ -1,5 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sobre BABLER. | Software de Medida",
+  description: "Conheça a BABLER., uma software house especializada em desenvolvimento de software sob medida, sistemas web e automação de processos.",
+  keywords: ["sobre", "software house", "desenvolvimento web"],
+};
 
 export default function About() {
     return (

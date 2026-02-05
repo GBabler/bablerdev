@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Ubuntu_Sans, JetBrains_Mono } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import { ScrollObserver } from "@/components/effects/ScrollObserver";
 import { Navbar } from "@/components/layout/Navbar";
@@ -19,13 +18,22 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "BABLER. | Software Sob Medida",
-  description: "Desenvolvimento de software, sistemas web e automação de processos.",
-  keywords: ["software house", "desenvolvimento web", "automação", "Next.js", "C#"],
-  verification: {
-    google: "seu-codigo-de-verificacao-adsense-aqui", // Substitua pelo código real fornecido pelo AdSense
+  description: "Desenvolvimento de software, sistemas web e automação de processos. Transformamos ideias em realidade digital com tecnologia de ponta.",
+  keywords: ["software house", "desenvolvimento web", "automação", "Next.js", "C#", "software sob medida"],
+  metadataBase: new URL("https://bablerdev.com.br"),
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: "https://bablerdev.com.br",
+    title: "BABLER. | Software Sob Medida",
+    description: "Desenvolvimento de software, sistemas web e automação de processos.",
+    siteName: "BABLER.",
   },
   other: {
     "google-adsense-account": "ca-pub-5971787155500943",
+    "mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "black-translucent",
   },
 };
 
@@ -36,13 +44,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#050505" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://bablerdev.com.br" />
+      </head>
       <body className={`${ubuntuSans.variable} ${jetbrainsMono.variable} font-sans antialiased bg-[#050505]`}>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5971787155500943"
-          crossOrigin="anonymous"
-          strategy="beforeInteractive"
-        />
         <ScrollObserver />
 
         <Navbar />
