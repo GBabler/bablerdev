@@ -273,16 +273,16 @@ export default function Home() {
           </div>
 
           {/* Simple Grid for Portfolio Preview */}
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
             {/* Card 1 - TRIVU - Clean Vertical Layout */}
             <a href="https://www.trivu.com.br" target="_blank" rel="noopener noreferrer" className="group block bg-[#0f0f0f] border border-white/5 overflow-hidden rounded-2xl transition-all hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/10">
 
-              {/* Image Section - Full Width Fill */}
+              {/* Image Section */}
               <div className="relative w-full h-72 overflow-hidden bg-black">
                 <img
                   src="/img/trivu/trivu.png"
                   alt="Trivu Landing Page"
-                  className="w-full h-auto object-top transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
 
@@ -363,7 +363,7 @@ export default function Home() {
             </a>
 
             {/* Card 3 - ListaConvidados */}
-            <a href="#" target="_blank" rel="noopener noreferrer" className="group block bg-[#0f0f0f] border border-white/5 overflow-hidden rounded-2xl transition-all hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-500/10">
+            <a href="https://lista-convite.vercel.app" target="_blank" rel="noopener noreferrer" className="group block bg-[#0f0f0f] border border-white/5 overflow-hidden rounded-2xl transition-all hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-500/10">
 
               {/* Image Section */}
               <div className="relative w-full h-72 overflow-hidden bg-black">
@@ -378,13 +378,13 @@ export default function Home() {
               <div className="p-6 space-y-3">
                 <div className="flex items-center gap-3">
                   <h3 className="text-xl font-bold text-white">ListaConvidados</h3>
-                  <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">WEB APP</span>
+                  <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">SAAS</span>
                 </div>
 
-                <p className="text-slate-200 font-medium leading-snug">&quot;Organize convidados, acompanhe confirmações.&quot;</p>
+                <p className="text-slate-200 font-medium leading-snug">&quot;O fim das listas no papel. Controle absoluto na sua mão.&quot;</p>
 
                 <p className="text-slate-400 text-sm leading-relaxed">
-                  Crie convites digitais para casamentos, formaturas e aniversários. Envie pelo WhatsApp e acompanhe quem confirmou em tempo real pelo painel. Sem planilhas, sem estresse.
+                  Plataforma responsiva para RSVP (Confirmação de Presença). Geração de links dinâmicos para convites de casamento e eventos, com dashboard analítico e controle em tempo real.
                 </p>
 
                 <p className="text-xs text-emerald-400 font-medium">
@@ -392,10 +392,48 @@ export default function Home() {
                 </p>
 
                 <div className="flex gap-2 flex-wrap pt-3 border-t border-white/10">
-                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">Next.js</span>
-                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">Tailwind</span>
-                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">WhatsApp API</span>
-                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">PDF Export</span>
+                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">Next.js 16</span>
+                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">SQL Server</span>
+                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">Framer Motion</span>
+                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">JWT Auth</span>
+                </div>
+              </div>
+            </a>
+
+            {/* Card 4 - Rota Gasosa */}
+            <a href="https://rota-gasosa.vercel.app" target="_blank" rel="noopener noreferrer" className="group block bg-[#0f0f0f] border border-white/5 overflow-hidden rounded-2xl transition-all hover:border-orange-500/50 hover:shadow-2xl hover:shadow-orange-500/10">
+
+              {/* Image Section - Hover Reveal Effect */}
+              <div className="relative w-full h-72 overflow-hidden bg-black">
+                <img
+                  src="/img/rotagasosa/rotagasosa.png"
+                  alt="Rota Gasosa - Preços em tempo real"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+
+              {/* Content Section */}
+              <div className="p-6 space-y-3">
+                <div className="flex items-center gap-3">
+                  <h3 className="text-xl font-bold text-white">Rota Gasosa</h3>
+                  <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-orange-500/20 text-orange-300 border border-orange-500/30">PLATAFORMA</span>
+                </div>
+
+                <p className="text-slate-200 font-medium leading-snug">&quot;Econômetro inteligente e colaborativo na sua região.&quot;</p>
+
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Acompanhe e descubra os postos de combustíveis com o melhor custo-benefício. Mapa interativo de preços, integração a base oficial e avaliações colaborativas em tempo real.
+                </p>
+
+                <p className="text-xs text-orange-400 font-medium">
+                  Projeto interno <span className="text-slate-500">@BablerDev</span>
+                </p>
+
+                <div className="flex gap-2 flex-wrap pt-3 border-t border-white/10">
+                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">Next.js 16</span>
+                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">Google Maps API</span>
+                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">SQL Server</span>
+                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">Prisma ORM</span>
                 </div>
               </div>
             </a>
