@@ -273,7 +273,7 @@ export default function Home() {
           </div>
 
           {/* Simple Grid for Portfolio Preview */}
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Card 1 - TRIVU - Clean Vertical Layout */}
             <a href="https://www.trivu.com.br" target="_blank" rel="noopener noreferrer" className="group block bg-[#0f0f0f] border border-white/5 overflow-hidden rounded-2xl transition-all hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/10">
 
@@ -293,7 +293,7 @@ export default function Home() {
                   <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30">SAAS</span>
                 </div>
 
-                <p className="text-slate-200 font-medium leading-snug">"Agendamentos e gestão em um só lugar."</p>
+                <p className="text-slate-200 font-medium leading-snug">&quot;Agendamentos e gestão em um só lugar.&quot;</p>
 
                 <p className="text-slate-400 text-sm leading-relaxed">
                   Ecossistema completo: agendamento online, controle financeiro, CRM e fidelização.
@@ -343,7 +343,7 @@ export default function Home() {
                   <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">WEB APP</span>
                 </div>
 
-                <p className="text-slate-200 font-medium leading-snug">"Digitalize, valide e documente com precisão."</p>
+                <p className="text-slate-200 font-medium leading-snug">&quot;Digitalize, valide e documente com precisão.&quot;</p>
 
                 <p className="text-slate-400 text-sm leading-relaxed">
                   Leitura inteligente via câmera ou upload, com verificação automática de integridade. Gere relatórios PDF detalhados com evidências visuais e dados técnicos prontos para auditoria.
@@ -358,6 +358,44 @@ export default function Home() {
                   <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">Vite</span>
                   <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">PDFGen</span>
                   <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">Camera API</span>
+                </div>
+              </div>
+            </a>
+
+            {/* Card 3 - ListaConvidados */}
+            <a href="#" target="_blank" rel="noopener noreferrer" className="group block bg-[#0f0f0f] border border-white/5 overflow-hidden rounded-2xl transition-all hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-500/10">
+
+              {/* Image Section */}
+              <div className="relative w-full h-72 overflow-hidden bg-black">
+                <img
+                  src="/img/listaConvite/ListaConvite.png"
+                  alt="ListaConvidados - Organize convidados e acompanhe confirmações"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+
+              {/* Content Section */}
+              <div className="p-6 space-y-3">
+                <div className="flex items-center gap-3">
+                  <h3 className="text-xl font-bold text-white">ListaConvidados</h3>
+                  <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">WEB APP</span>
+                </div>
+
+                <p className="text-slate-200 font-medium leading-snug">&quot;Organize convidados, acompanhe confirmações.&quot;</p>
+
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Crie convites digitais para casamentos, formaturas e aniversários. Envie pelo WhatsApp e acompanhe quem confirmou em tempo real pelo painel. Sem planilhas, sem estresse.
+                </p>
+
+                <p className="text-xs text-emerald-400 font-medium">
+                  Projeto interno <span className="text-slate-500">@BablerDev</span>
+                </p>
+
+                <div className="flex gap-2 flex-wrap pt-3 border-t border-white/10">
+                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">Next.js</span>
+                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">Tailwind</span>
+                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">WhatsApp API</span>
+                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">PDF Export</span>
                 </div>
               </div>
             </a>
