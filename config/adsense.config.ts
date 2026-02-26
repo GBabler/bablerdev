@@ -47,9 +47,12 @@ export const adsenseConfig = {
 // Função helper para obter a config do domínio atual
 export function getAdsenseConfig(hostname?: string) {
   const currentHostname = hostname || (typeof window !== 'undefined' ? window.location.hostname : 'bablerdev.com.br');
-  
+
   // Busca a config exata ou usa a padrão (desativada)
-  return adsenseConfig[currentHostname as keyof typeof adsenseConfig] || { enabled: false, client: null, slots: {} };
+  const castedConfig = adsenseConfig[currentHostname as keyof typeof adsenseConfig];
+  if (castedConfig) return castedConfig;
+
+  return { enabled: false, client: null, slots: {} as any };
 }
 
 // Função helper para verificar se AdSense deve estar ativo

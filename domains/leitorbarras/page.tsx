@@ -1,13 +1,8 @@
 'use client';
 
-import { GoogleAdsense, AdFullWidth } from '@/components/ads/GoogleAdsense';
-
 export default function LeitorBarrasPage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-[#050505] px-6 py-10">
-      {/* Anúncio no topo */}
-      <AdFullWidth className="mb-8 max-w-4xl w-full" />
-
       {/* Conteúdo da aplicação */}
       <div className="max-w-4xl w-full space-y-8">
         <div className="text-center">
@@ -25,17 +20,6 @@ export default function LeitorBarrasPage() {
             Sua aplicação de leitor QR será renderizada aqui
           </p>
         </div>
-
-        {/* Anúncio entre conteúdo */}
-        <GoogleAdsense
-          format="rectangle"
-          className="mx-auto my-8"
-        />
-      </div>
-
-      {/* Anúncio no rodapé */}
-      <div className="mt-12 max-w-4xl w-full">
-        <AdFullWidth className="mt-8" />
       </div>
     </div>
   );
