@@ -19,12 +19,19 @@ export function middleware(request: NextRequest) {
 
   // Detecta subdomínio
   const isLeitorbarras = hostname.includes('leitorbarras');
-  
+
   // Reescreve a URL para a pasta correta
   if (isLeitorbarras) {
+    const requestHeaders = new Headers(request.headers);
+    requestHeaders.set('x-from-subdomain', 'leitorbarras');
+
     return NextResponse.rewrite(
       new URL(`/domains/leitorbarras${pathname}`, request.url),
-      { request: { headers: { 'x-from-subdomain': 'leitorbarras' } } }
+      {
+        request: {
+          headers: requestHeaders,
+        },
+      }
     );
   }
 
