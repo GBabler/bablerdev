@@ -403,36 +403,13 @@ export default function Home() {
             {/* Card 5 - Vigilante */}
             <div className="group block bg-[#0f0f0f] border border-white/5 overflow-hidden rounded-2xl transition-all hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 cursor-default">
 
-              {/* Image Section - Stylized Internal System Visual */}
-              <div className="relative w-full h-72 overflow-hidden bg-[#080c14] flex items-center justify-center">
-                {/* Grid background */}
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:32px_32px]" />
-                {/* Mock dashboard panels */}
-                <div className="relative z-10 w-full px-6 space-y-3">
-                  {/* Top bar */}
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-                    <span className="text-[10px] font-mono text-blue-400 tracking-widest uppercase">Vigilante — Sistema Ativo</span>
-                    <div className="ml-auto text-[9px] font-mono text-slate-600">LDAP ✓</div>
-                  </div>
-                  {/* Panel rows */}
-                  {[
-                    { label: "Suporte", value: "12 tickets abertos", color: "bg-cyan-500" },
-                    { label: "Migração", value: "3 críticos", color: "bg-red-500" },
-                    { label: "Implantação", value: "7 pendentes", color: "bg-yellow-500" },
-                    { label: "Diretoria", value: "Visão consolidada", color: "bg-purple-500" },
-                  ].map((row) => (
-                    <div key={row.label} className="flex items-center gap-3 bg-white/[0.03] border border-white/5 rounded-lg px-3 py-2 group-hover:border-blue-500/20 transition-colors">
-                      <div className={`w-1.5 h-1.5 rounded-full ${row.color} flex-shrink-0`} />
-                      <span className="text-[11px] text-slate-400 font-mono w-24">{row.label}</span>
-                      <span className="text-[11px] text-slate-300 font-mono">{row.value}</span>
-                    </div>
-                  ))}
-                </div>
-                {/* Corner badge */}
-                <div className="absolute top-3 right-3 px-2 py-1 bg-blue-500/10 border border-blue-500/20 rounded text-[9px] font-mono text-blue-400">
-                  2+ anos em produção
-                </div>
+              {/* Image Section */}
+              <div className="relative w-full h-72 overflow-hidden bg-black">
+                <img
+                  src="/img/vigilante/vigilante.png"
+                  alt="Painel Vigilante - Sistema corporativo interno"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                />
               </div>
 
               {/* Content Section */}
