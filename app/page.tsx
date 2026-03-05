@@ -400,6 +400,69 @@ export default function Home() {
               </div>
             </a>
 
+            {/* Card 5 - Vigilante */}
+            <div className="group block bg-[#0f0f0f] border border-white/5 overflow-hidden rounded-2xl transition-all hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 cursor-default">
+
+              {/* Image Section - Stylized Internal System Visual */}
+              <div className="relative w-full h-72 overflow-hidden bg-[#080c14] flex items-center justify-center">
+                {/* Grid background */}
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:32px_32px]" />
+                {/* Mock dashboard panels */}
+                <div className="relative z-10 w-full px-6 space-y-3">
+                  {/* Top bar */}
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                    <span className="text-[10px] font-mono text-blue-400 tracking-widest uppercase">Vigilante — Sistema Ativo</span>
+                    <div className="ml-auto text-[9px] font-mono text-slate-600">LDAP ✓</div>
+                  </div>
+                  {/* Panel rows */}
+                  {[
+                    { label: "Suporte", value: "12 tickets abertos", color: "bg-cyan-500" },
+                    { label: "Migração", value: "3 críticos", color: "bg-red-500" },
+                    { label: "Implantação", value: "7 pendentes", color: "bg-yellow-500" },
+                    { label: "Diretoria", value: "Visão consolidada", color: "bg-purple-500" },
+                  ].map((row) => (
+                    <div key={row.label} className="flex items-center gap-3 bg-white/[0.03] border border-white/5 rounded-lg px-3 py-2 group-hover:border-blue-500/20 transition-colors">
+                      <div className={`w-1.5 h-1.5 rounded-full ${row.color} flex-shrink-0`} />
+                      <span className="text-[11px] text-slate-400 font-mono w-24">{row.label}</span>
+                      <span className="text-[11px] text-slate-300 font-mono">{row.value}</span>
+                    </div>
+                  ))}
+                </div>
+                {/* Corner badge */}
+                <div className="absolute top-3 right-3 px-2 py-1 bg-blue-500/10 border border-blue-500/20 rounded text-[9px] font-mono text-blue-400">
+                  2+ anos em produção
+                </div>
+              </div>
+
+              {/* Content Section */}
+              <div className="p-6 space-y-3">
+                <div className="flex items-center gap-3">
+                  <h3 className="text-xl font-bold text-white">Vigilante</h3>
+                  <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30">WEB APP</span>
+                  <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-700/50 text-slate-400 border border-slate-600/30">CORPORATIVO</span>
+                </div>
+
+                <p className="text-slate-200 font-medium leading-snug">&quot;Nenhum ticket perdido. Nenhuma ação esquecida.&quot;</p>
+
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Sistema interno corporativo em produção há 2+ anos. Nasceu no time de Migração de Dados e escalou para toda a empresa — com painéis segmentados por área e hierarquia, autenticação LDAP e integração em tempo real com o Movidesk.
+                </p>
+
+                <p className="text-xs text-blue-400 font-medium">
+                  Desenvolvido por <span className="text-slate-500">@BablerDev</span>
+                </p>
+
+                <div className="flex gap-2 flex-wrap pt-3 border-t border-white/10">
+                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">ASP.NET Core MVC</span>
+                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">JavaScript</span>
+                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">LDAP</span>
+                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">Movidesk API</span>
+                  <span className="text-xs text-slate-300 border border-white/10 px-2 py-1 rounded-full bg-white/5">Cache</span>
+                </div>
+              </div>
+            </div>
+
             {/* Card 4 - Rota Gasosa */}
             <a href="https://rota-gasosa.vercel.app" target="_blank" rel="noopener noreferrer" className="group block bg-[#0f0f0f] border border-white/5 overflow-hidden rounded-2xl transition-all hover:border-orange-500/50 hover:shadow-2xl hover:shadow-orange-500/10">
 
